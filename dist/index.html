@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget Tracker</title>
+    <link rel="stylesheet" href="/budget-trecker.3a01df49.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container">
+      <h1>💸 Budget Tracker</h1>
+
+      <div class="main-grid">
+        <!-- Left Section: History & Features -->
+        <div class="left-section">
+          <h2 id="history-toggle" style="cursor: pointer">
+            Transaction History<span>⬇️</span>
+          </h2>
+          <ul id="transaction-list" class="transaction-list hidden"></ul>
+
+          <div class="extra-features">
+            <div class="filter-buttons">
+              <h3>Filters</h3>
+              <label><input type="radio" name="filter" value="all" checked="">
+                All</label>
+              <label><input type="radio" name="filter" value="lastWeek"> Last
+                Week</label>
+              <label><input type="radio" name="filter" value="lastMonth"> Last
+                Month</label>
+            </div>
+          </div>
+          <div style="width: 500px"><canvas id="finances"></canvas></div>
+        </div>
+
+        <!-- Right Section: Summary & Form -->
+        <div class="right-section">
+          <div class="balance-box">
+            <h2>Your Balance</h2>
+            <p id="balance">$0.00</p>
+          </div>
+
+          <div class="summary">
+            <div class="summary-item income">
+              <h3>Income</h3>
+              <p id="income">$0.00</p>
+            </div>
+            <div class="summary-item expense">
+              <h3>Expenses</h3>
+              <p id="expense">$0.00</p>
+            </div>
+          </div>
+          <!-- Add this inside your form or near the balance section -->
+          <div class="top-controls">
+            <div class="currency-box">
+              <label for="currency-select">Convert To:</label>
+              <select id="currency-select">
+                <option value="USD">USD</option>
+                <option value="EUR">EUR</option>
+                <option value="GBP">GBP</option>
+                <option value="JPY">JPY</option>
+              </select>
+            </div>
+
+            <!-- Balance Controls -->
+
+            <div class="balance-controls">
+              <button id="add-balance-btn" class="add-balance-btn">
+                ➕ Add Balance
+              </button>
+
+              <form id="add-balance-form" class="add-balance-form hidden">
+                <input type="number" id="balance-input" placeholder="Enter balance" required="">
+                <button id="submit-balance" type="submit">Submit</button>
+              </form>
+            </div>
+          </div>
+
+          <form id="transaction-form">
+            <h2>Add Transaction</h2>
+            <input type="text" id="text" placeholder="Description">
+            <input type="number" id="amount" placeholder="Amount (use - for expenses)">
+            <button id="submit-btn" type="submit">Add Transaction</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="/budget-trecker.d82edf82.js"></script>
+  </body>
+</html>

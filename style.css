@@ -1,0 +1,367 @@
+/* Global Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #f5f7fa;
+  color: #333;
+  line-height: 1.6;
+  padding: 2rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  color: #2c3e50;
+}
+
+/* Layout */
+.main-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.left-section,
+.right-section {
+  flex: 1 1 45%;
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Transaction List */
+.transaction-list {
+  list-style: none;
+  margin-top: 1rem;
+}
+
+.transaction-list.hidden {
+  display: none;
+}
+
+/* Filters */
+.filter-radio-buttons h3 {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  color: #34495e;
+}
+
+.filter-radio-buttons label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.filter-radio-buttons input[type="radio"] {
+  accent-color: #007bff;
+  transform: scale(1.2);
+}
+
+/* Balance Section */
+.balance-box {
+  background-color: #ecf0f1;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.balance-box h2 {
+  font-size: 1.5rem;
+  color: #2c3e50;
+}
+
+.balance-box p {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #27ae60;
+}
+
+/* Summary */
+.summary {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.summary-item {
+  flex: 1;
+  padding: 1rem;
+  border-radius: 8px;
+  background-color: #f1f3f5;
+  margin-right: 1rem;
+  text-align: center;
+}
+
+.summary-item:last-child {
+  margin-right: 0;
+}
+
+.summary-item.income p {
+  color: #2ecc71;
+}
+
+.summary-item.expense p {
+  color: #e74c3c;
+}
+
+/* Currency & Controls */
+.top-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.currency-box select {
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+/* Balance Controls */
+.add-balance-btn,
+#submit-balance {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.add-balance-btn:hover,
+#submit-balance:hover {
+  background-color: #0056b3;
+}
+
+.add-balance-form {
+  margin-top: 0.75rem;
+}
+
+.add-balance-form input {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-right: 0.5rem;
+}
+
+/* Form */
+#transaction-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#transaction-form input,
+#transaction-form button {
+  padding: 0.75rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+#submit-btn {
+  background-color: #2ecc71;
+  color: white;
+  border: none;
+  transition: background 0.3s ease;
+}
+
+#submit-btn:hover {
+  background-color: #27ae60;
+}
+
+/* Toggle Arrow Animation */
+#history-toggle span {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+#history-toggle.collapsed span {
+  transform: rotate(-90deg);
+}
+.hidden {
+  display: none;
+}
+.transaction-list {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  max-height: 300px;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+}
+
+/* Scrollbar styling (optional, looks cleaner) */
+.transaction-list::-webkit-scrollbar {
+  width: 6px;
+}
+.transaction-list::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 4px;
+}
+
+.transaction {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f9f9fb;
+  padding: 0.75rem 1rem;
+  border-left: 6px solid #2ecc71; /* default for income */
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+}
+
+.transaction:hover {
+  transform: scale(1.01);
+}
+
+.transaction.expense {
+  border-left-color: #e74c3c;
+}
+
+.description {
+  font-weight: 500;
+  flex: 1;
+  color: #34495e;
+}
+
+.amount {
+  font-weight: 600;
+  margin: 0 1rem;
+  color: #2ecc71;
+}
+
+.transaction.expense .amount {
+  color: #e74c3c;
+}
+
+.delete-btn {
+  background: none;
+  border: none;
+  color: #999;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.delete-btn:hover {
+  color: #e74c3c;
+}
+
+/* Each row */
+.transaction-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  background-color: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+/* Left part: text info */
+.transaction-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+/* Right part: amount */
+.transaction-amount {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #2ecc71; /* default for income */
+}
+
+.transaction-amount.expense {
+  color: #e74c3c;
+}
+.transaction-row:hover {
+  transform: scale(1.01);
+  transition: transform 0.2s ease;
+}
+/* Style the filter buttons container */
+/* Style the filter buttons container */
+.filter-buttons {
+  margin-top: 1rem;
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  color: #34495e;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* Style each label */
+.filter-buttons label {
+  display: flex;
+  align-items: center;
+  background-color: #f9f9fb;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #34495e;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Style the input (radio or checkbox) */
+.filter-buttons input[type="radio"],
+.filter-buttons input[type="checkbox"] {
+  accent-color: #007bff; /* Blue color for the input */
+  margin-right: 0.75rem;
+  width: 1.2rem;
+  height: 1.2rem;
+  cursor: pointer;
+}
+
+/* Add hover effect for labels */
+.filter-buttons label:hover {
+  background-color: #007bff;
+  color: #fff;
+  border-color: #007bff;
+  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2);
+}
+
+/* Add active state for selected buttons */
+.filter-buttons input[type="radio"]:checked + label,
+.filter-buttons input[type="checkbox"]:checked + label {
+  background-color: #007bff;
+  color: #fff;
+  border-color: #007bff;
+  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2);
+}
+
+/* Add spacing between buttons */
+.filter-buttons label + label {
+  margin-top: 0.5rem;
+}

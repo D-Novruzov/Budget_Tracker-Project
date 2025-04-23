@@ -1,0 +1,21 @@
+{
+  "dependencies": {
+    "chart.js": "^4.4.9",
+    "core.js": "^0.4.2",
+    "fractional": "^1.0.0",
+    "regenerator-runtime": "^0.14.1"
+  },
+  "devDependencies": {
+    "parcel": "^2.14.4"
+  },
+  "name": "budget-trecker",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "build index.html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
