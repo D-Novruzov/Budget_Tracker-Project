@@ -1,0 +1,17 @@
+# Node.js dependencies
+node_modules/
+
+# Parcel cache
+.parcel-cache/
+
+# Output directory
+dist/
+
+# Logs
+*.log
+
+# OS-specific files
+.DS_Store
+
+# Environment variables
+.env
