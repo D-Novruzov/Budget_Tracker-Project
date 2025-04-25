@@ -1,5 +1,6 @@
 "use strict";
 import { clearStorage, contentChanger } from "./helpers";
+import { state } from "./state";
 import { storageManager } from "./helpers";
 import { fetchAPI } from "./helpers";
 import { parser } from "./helpers";
@@ -25,9 +26,7 @@ const filtercheckButns = document.querySelectorAll('input[name="filter"]');
 export const transactionList = document.querySelector("#transaction-list");
 export const financeChart = document.getElementById("finances");
 // window.localStorage.setIem("depositHistory", depositHistory);
-export const state = {
-  selectedCurrency: "USD",
-};
+
 export const history = {
   transactionHistory: storageManager("get", "transactionHistory") || [],
   totalIncome: storageManager("get", "totalIncome") || [],
@@ -76,6 +75,7 @@ const historyElementCreator = async function (arr, insertEl) {
     insertEl.insertAdjacentHTML("afterbegin", html);
   }
 };
+
 let rate = 1;
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //HIDING THE ELEMENT
