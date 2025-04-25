@@ -213,7 +213,7 @@ filtercheckButns.forEach((btn) => {
         return txDate >= fromDate && txDate <= today;
       });
     }
-    console.log(filtered);
+
     historyElementCreator(filtered, transactionList);
   });
 });
