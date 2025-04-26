@@ -5,7 +5,7 @@ import { storageManager } from "./helpers";
 import { fetchAPI } from "./helpers";
 import { parser } from "./helpers";
 import { currencies } from "./config";
-import { API } from "./config";
+
 import { chartMaker } from "./financeChart";
 
 const transactionDesc = document.getElementById("text");

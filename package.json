@@ -11,7 +11,7 @@
   "name": "budget-trecker",
   "version": "1.0.0",
   "scripts": {
-    "start": "parcel index.html",
+    "start": "parcel login.html",
     "build": "build index.html"
   },
   "keywords": [],

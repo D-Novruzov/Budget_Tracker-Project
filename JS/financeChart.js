@@ -6,7 +6,7 @@ export const chartMaker = async function () {
     labels: ["Expenses", "Income"],
     datasets: [
       {
-        label: "Your Transactions",
+        label: "Your transactions",
         data: [history.totalExpense, history.totalIncome],
         backgroundColor: ["rgb(255, 99, 132)", "rgb(0, 255, 0)"],
         hoverOffset: 4,
