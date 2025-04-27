@@ -7,79 +7,13 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
-    <style>
-      body {
-        background-color: #f7f9fc;
-        font-family: "Inter", sans-serif;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        margin: 0;
-      }
-
-      .login-container {
-        background-color: white;
-        padding: 2rem 3rem;
-        border-radius: 1rem;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        width: 100%;
-        max-width: 400px;
-        text-align: center;
-      }
-
-      .login-container h2 {
-        margin-bottom: 1.5rem;
-        color: #1f2937;
-        font-size: 1.8rem;
-        font-weight: 700;
-      }
-
-      .login-container input {
-        width: 100%;
-        padding: 0.8rem;
-        margin-bottom: 1rem;
-        border: 1px solid #d1d5db;
-        border-radius: 0.5rem;
-        font-size: 1rem;
-        outline: none;
-        transition: 0.2s;
-      }
-
-      .login-container input:focus {
-        border-color: #3b82f6;
-        box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
-      }
-
-      .login-container button {
-        width: 100%;
-        padding: 0.8rem;
-        background-color: #22c55e;
-        color: white;
-        font-size: 1rem;
-        border: none;
-        border-radius: 0.5rem;
-        font-weight: 600;
-        cursor: pointer;
-        transition: background-color 0.2s;
-      }
-
-      .login-container button:hover {
-        background-color: #16a34a;
-      }
-
-      .error {
-        color: #ef4444;
-        margin-top: 1rem;
-        font-size: 0.9rem;
-      }
-    </style>
+    <link rel="stylesheet" href="login.css" />
   </head>
   <body>
     <div class="login-container">
       <h2>Login</h2>
       <form class="login-form">
-        <input type="text" id="username" placeholder="username" required />
+        <input type="text" id="username" placeholder="Username" required />
         <input type="password" id="password" placeholder="Password" required />
         <button onclick="login()">Login</button>
       </form>

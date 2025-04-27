@@ -4,5 +4,7 @@ const password = document.getElementById("password");
 const loginForm = document.querySelector(".login-form");
 loginForm.addEventListener("submit", function (e) {
   e.preventDefault();
+
+  //redirecting to the index page(main one)
   window.location.href = "./index.html";
 });

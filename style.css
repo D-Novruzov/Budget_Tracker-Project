@@ -7,7 +7,7 @@
 
 body {
   font-family: "Inter", sans-serif;
-  background-color: #f5f7fa;
+  background: linear-gradient(to right, #667eea, #764ba2) !important;
   color: #333;
   line-height: 1.6;
   padding: 2rem;
