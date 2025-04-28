@@ -190,3 +190,19 @@ body {
   margin-top: 1rem;
   font-size: 0.9rem;
 }
+.signup-link {
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.signup-link a {
+  color: #11998e;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.signup-link a:hover {
+  text-decoration: underline;
+}

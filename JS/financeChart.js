@@ -1,13 +1,13 @@
 import { financeChart } from "./script";
 import { Chart } from "chart.js/auto";
-import { history } from "./script";
+import { activeUser } from "./script";
 export const chartMaker = async function () {
   const data = {
     labels: ["Expenses", "Income"],
     datasets: [
       {
         label: "Your transactions",
-        data: [history.totalExpense, history.totalIncome],
+        data: [activeUser.history.totalExpense, activeUser.history.totalIncome],
         backgroundColor: ["rgb(255, 99, 132)", "rgb(0, 255, 0)"],
         hoverOffset: 4,
       },

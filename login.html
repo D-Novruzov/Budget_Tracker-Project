@@ -12,14 +12,19 @@
   <body>
     <div class="login-container">
       <h2>Login</h2>
-      <form class="login-form">
+      <form class="login-form" id="login-form" onsubmit="return login(event)">
         <input type="text" id="username" placeholder="Username" required />
         <input type="password" id="password" placeholder="Password" required />
-        <button onclick="login()">Login</button>
+        <button type="submit">Login</button>
       </form>
       <div class="error" id="errorMsg"></div>
+
+      <!-- ✨ Add this -->
+      <div class="signup-link">
+        <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
+      </div>
     </div>
 
-    <script src="./JS/login.js"></script>
+    <script type="module" src="./JS/login.js"></script>
   </body>
 </html>

@@ -32,10 +32,10 @@ export const fetchAPI = async function (base, to, amount) {
   }
 };
 
-export const parser = function (key) {
-  const value = storageManager("get", key); // ✅ safe here
-  return parseFloat(value) || 0;
-};
+// export const parser = function (key) {
+//   const value = storageManager("get", key); // ✅ safe here
+//   return parseFloat(value) || 0;
+// };
 
 export const contentChanger = function (name) {
   return `${currencies[state.selectedCurrency]}${name.toFixed(2)}`;
