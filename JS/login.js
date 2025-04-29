@@ -1,24 +1,10 @@
 "use strict";
 import { storageManager } from "./helpers.js";
-
-// Wait for DOM to fully load
-document.addEventListener("DOMContentLoaded", () => {
-  const loginForm = document.querySelector("#login-form");
-
-  if (!loginForm) {
-    console.error("Login form not found!");
-    return;
-  }
-
-  // Attach the submit event
-  loginForm.addEventListener("submit", login);
-});
-
 function login(event) {
   event.preventDefault();
 
-  let users = storageManager("get", "users") || [];
-
+  let users = JSON.parse(localStorage.getItem("users")) || [];
+  console.log(users);
   const username = document.getElementById("username").value.trim();
   const password = document.getElementById("password").value.trim();
 
@@ -44,14 +30,27 @@ function login(event) {
     });
 
     // Save the updated users array
-    storageManager("set", "users", users);
+    localStorage.setItem("users", JSON.stringify(users));
 
     // Redirect to main page
-    window.location.href = "./index.html";
+    window.location.href = "./script.html";
   } else {
     alert("Please create an account first.");
     window.location.href = "./signup.html"; // Optional: redirect to signup
   }
 }
+
+// Wait for DOM to fully load
+document.addEventListener("DOMContentLoaded", () => {
+  const loginForm = document.querySelector(".login-form");
+
+  if (!loginForm) {
+    console.error("Login form not found!");
+    return;
+  }
+
+  // Attach the submit event
+  loginForm.addEventListener("submit", login);
+});
 
 export { login };

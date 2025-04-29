@@ -7,7 +7,10 @@ export const chartMaker = async function () {
     datasets: [
       {
         label: "Your transactions",
-        data: [activeUser.history.totalExpense, activeUser.history.totalIncome],
+        data: [
+          activeUser.history.totalExpenses,
+          activeUser.history.totalIncome,
+        ],
         backgroundColor: ["rgb(255, 99, 132)", "rgb(0, 255, 0)"],
         hoverOffset: 4,
       },

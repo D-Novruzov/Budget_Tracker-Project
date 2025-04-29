@@ -25,9 +25,11 @@ export const transactionList = document.querySelector("#transaction-list");
 export const financeChart = document.getElementById("finances");
 
 // Load users and active user
-
+let users = storageManager("get", "users");
+export let activeUser = users.find((user) => user.userActive === true);
 if (!activeUser) {
-  console.log("there is no active user");
+  // No active user, redirect to login page
+  window.location.href = "./login.html";
 }
 
 // Utility function to save the updated activeUser back to users array
@@ -110,9 +112,7 @@ document.addEventListener("DOMContentLoaded", async function () {
   expense.textContent = `$${totalExpense.toFixed(2)}`;
   chartMaker();
 });
-let users = JSON.parse(window.localStorage.getItem("users"));
-export let activeUser = users.find((user) => user.userActive === true);
-console.log(activeUser);
+
 // Adding balance (income)
 addBalanceForm.addEventListener("submit", function (e) {
   e.preventDefault();
